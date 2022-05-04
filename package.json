@@ -2,12 +2,13 @@
   "name": "@essemey/react-data-table",
   "version": "1.0.0",
   "description": "",
-  "main": "DataTable.jsx",
+  "main": "dist/DataTable.js",
   "publishConfig": {
     "@essemey:registry": "https://npm.pkg.github.com"
   },
   "scripts": {
-    "test": "exit 0"
+    "test": "exit 0",
+    "build": "babel src/ --out-dir dist --copy-files"
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,14 @@
   "bugs": {
     "url": "https://github.com/Essemey/react-data-table/issues"
   },
-  "homepage": "https://github.com/Essemey/react-data-table#readme"
+  "homepage": "https://github.com/Essemey/react-data-table#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.17.10",
+    "@babel/core": "^7.17.10",
+    "@babel/preset-env": "^7.17.10"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-react": "^7.16.7"
+  }
 }
