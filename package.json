@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "DataTable.jsx",
+  "publishConfig": {
+    "@essemey:registry": "https://npm.pkg.github.com"
+  },
   "scripts": {
     "test": "exit 0"
   },
@@ -15,8 +18,5 @@
   "bugs": {
     "url": "https://github.com/Essemey/react-data-table/issues"
   },
-  "homepage": "https://github.com/Essemey/react-data-table#readme",
-  "publishConfig": {
-    "@Essemey:registry": "https://npm.pkg.github.com"
-  }
+  "homepage": "https://github.com/Essemey/react-data-table#readme"
 }
