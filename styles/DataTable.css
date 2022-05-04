@@ -1,0 +1,127 @@
+.data_table_container {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 0px 6px 3px #8585852b;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.data_table_container .no_data {
+    color: rgb(167 226 255);
+    text-align: center;
+    padding: 0px 0px 15px 0px;
+    font-size: 20px;
+}
+
+.data_table_header {
+    padding: 12px 0px 4px 0px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.data_table_header h1 {
+    color: rgb(167 226 255);
+    font-size: 42px;
+}
+
+.data_table_header select {
+    padding: 10px;
+    position: absolute;
+    left: 15px;
+    font-size: 14px;
+    border: none;
+    border-bottom: 1.7px solid rgb(167 226 255);
+    color: rgb(0 0 0 / 55%);
+    cursor: pointer;
+}
+
+
+
+.data_table_search {
+    padding: 10px;
+    position: absolute;
+    right: 15px;
+}
+
+.data_table_search svg {
+    font-size: 18px;
+    position: relative;
+    top: 4px;
+    right: 7px;
+    color: rgb(0 0 0 / 55%);
+}
+
+.data_table_header input {
+    border: none;
+    border-bottom: 1.7px solid rgb(167 226 255);
+}
+
+.data_table_header input:focus,
+.data_table_header select:focus {
+    outline: none;
+    border: none;
+    border-bottom: 1.7px solid rgb(167 226 255);
+    color: black;
+}
+
+.navigation_buttons {
+    width: fit-content;
+    align-self: flex-end;
+    background: white;
+    align-self: flex-end;
+    padding: 0px 8px 8px 8px;
+}
+
+.data_table {
+    padding: 8px;
+}
+
+.data_table th {
+    width: fit-content;
+    height: 45px;
+    position: relative;
+    cursor: pointer;
+    text-align: left;
+    padding: 20px;
+}
+
+.data_table tr {
+    cursor: default;
+}
+
+.data_table .tr_hover {
+    background-color: rgb(9 116 169);
+}
+
+.data_table .td_hover {
+    background-color: transparent;
+    color: white;
+}
+
+.data_table td {
+    background-color: rgb(167 226 255);
+    border-radius: 1px;
+    padding: 10px;
+}
+
+.navigation_buttons .button_active {
+    background-color: rgb(167 226 255);
+    color: white;
+}
+
+.button_disabled {
+    opacity: 0.2;
+}
+
+.navigation_buttons button {
+    padding: 8px;
+    margin: 5px;
+    border-radius: 1.5px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 14px;
+}

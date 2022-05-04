@@ -1,0 +1,26 @@
+.arrowIcons {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 8px;
+    right: -4px;
+}
+
+.arrowIcons .active {
+    color: rgb(167 226 255);
+}
+
+.arrowIcon {
+    line-height: 3px;
+    position: relative;
+    font-size: 25px;
+}
+
+.asc {
+    top: 5px;
+}
+
+.desc {
+    transform: rotate(180deg);
+    bottom: 13px;
+}
