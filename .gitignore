@@ -50,7 +50,7 @@ typings/
 # Optional npm cache directory
 .npm
 
-.github
+.github/
 
 # Optional eslint cache
 .eslintcache
