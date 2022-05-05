@@ -12,7 +12,6 @@
   },
   "scripts": {
     "test": "exit 0",
-    "start": "parcel index.html",
     "build": "babel src --out-dir dist --copy-files"
   },
   "repository": {
@@ -27,10 +26,7 @@
   "homepage": "https://github.com/Essemey/react-data-table#readme",
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
-    "core-js": "^3.22.4",
-    "parcel": "^2.5.0",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0"
+    "core-js": "^3.22.4"
   },
   "devDependencies": {
     "@babel/cli": "^7.17.10",
