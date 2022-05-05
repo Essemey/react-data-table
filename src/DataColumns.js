@@ -1,8 +1,8 @@
-import { memo } from 'react'
+import React from "react";
 import { ArrowIcon } from './icons/ArrowIcon';
 import './styles/ArrowIcon.css';
 
-export const DataColumns = memo(function ({ columns, handleSort, activeColumn }) {
+const DataColumns = React.memo(function ({ columns, handleSort, activeColumn }) {
 
     const activeAsc = column => column === activeColumn.column?.data && activeColumn.order ? 'active' : ''
     const activeDesc = column => column === activeColumn.column?.data && !activeColumn.order ? 'active' : ''
@@ -17,3 +17,5 @@ export const DataColumns = memo(function ({ columns, handleSort, activeColumn })
         </th>)}
     </tr>
 })
+
+export default DataColumns;

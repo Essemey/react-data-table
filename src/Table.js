@@ -1,8 +1,9 @@
 import './styles/DataTable.css'
-import { DataRow } from './DataRow';
-import { DataColumns } from './DataColumns';
+import DataRow from './DataRow';
+import DataColumns from './DataColumns';
+import React from "react";
 
-export function Table({ data, columns, activeColumn, handleSort }) {
+export default function Table({ data, columns, activeColumn, handleSort }) {
 
 
     return <>

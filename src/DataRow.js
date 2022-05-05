@@ -1,9 +1,8 @@
-import { memo } from 'react'
-import { useState } from 'react'
+import React from "react";
 
-export const DataRow = memo(function ({ columns, dataObj }) {
+const DataRow = React.memo(function ({ columns, dataObj }) {
 
-    const [hover, setHover] = useState(false)
+    const [hover, setHover] = React.useState(false)
 
     const trClassName = hover ? 'tr_hover' : ''
     const tdClassName = hover ? 'td_hover' : ''
@@ -15,3 +14,5 @@ export const DataRow = memo(function ({ columns, dataObj }) {
     </tr>
 
 })
+
+export default DataRow;

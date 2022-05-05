@@ -1,6 +1,6 @@
+import React from "react";
 
-
-export function NavigationButtons({ pagesNumber, currentPage, changePage }) {
+export default function NavigationButtons({ pagesNumber, currentPage, changePage }) {
 
     const buttons = []
 

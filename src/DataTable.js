@@ -1,7 +1,7 @@
-import { useState, useMemo, Children, useEffect, useCallback } from 'react'
-import { Table } from "./Table";
+import React from "react";
+import Table from "./Table";
 import './styles/DataTable.css'
-import { NavigationButtons } from './NavigationButtons';
+import NavigationButtons from './NavigationButtons';
 import { sortData } from './sortData';
 import { SearchIcon } from './icons/SearchIcon';
 
@@ -9,11 +9,11 @@ import { SearchIcon } from './icons/SearchIcon';
 export default function DataTable({ title, data, setData, children }) {
 
     //On mémoize (le retour de la fonction) columns pour éviter de créer des rendus supplémentaire pour DataRow qui est un composant pur
-    const columns = useMemo(() => Children.toArray(children), [])
+    const columns = React.useMemo(() => React.Children.toArray(children), [])
 
-    const [page, setPage] = useState({ entries: 5, pages: 0, current: 0, content: [] })
-    const [activeColumn, setActiveColumn] = useState({ column: null, order: false })
-    const [research, setResearch] = useState({ text: '', content: [] })
+    const [page, setPage] = React.useState({ entries: 5, pages: 0, current: 0, content: [] })
+    const [activeColumn, setActiveColumn] = React.useState({ column: null, order: false })
+    const [research, setResearch] = React.useState({ text: '', content: [] })
 
     const calculPages = (entriesP, dataLength) => {
 
@@ -29,7 +29,7 @@ export default function DataTable({ title, data, setData, children }) {
 
 
     //Quand on active un filtre
-    useEffect(() => {
+    React.useEffect(() => {
 
         if (activeColumn.column && data.length) {
             if (research.text !== '') {
@@ -43,14 +43,14 @@ export default function DataTable({ title, data, setData, children }) {
 
 
 
-    useEffect(() => {
+    React.useEffect(() => {
 
         //Si on a une recherche et que l'élément qu'on ajoute a besoin de créer une autre page avec les données recherchées
         if (research.text !== '') {
 
             const { id, ...parameters } = data[data.length - 1]
             //Si le dernier ajout correspond aux critères de recherche
-            if (Object.values(parameters).find(props => props.indexOf(research.text) !== -1)) {
+            if (Object.values(parameters).find(props => `${props}`.indexOf(research.text) !== -1)) {
 
 
                 //On regarde le nombre de pages qu'il faut pour content plus la donnée qu'on ajoute
@@ -134,7 +134,7 @@ export default function DataTable({ title, data, setData, children }) {
     const order = column => column === activeColumn.column?.data ? !activeColumn.order : true
 
     //On mémoize la fonction pour eviter de créer de nouveaux rendu pour DataColumns
-    const handleSort = useCallback(column => {
+    const handleSort = React.useCallback(column => {
         setData(data => sortData(column.type, order(column.data), column.data, data))
         setActiveColumn(c => ({ ...c, column: column, order: order(column.data) }))
     }, [activeColumn]) //On passe activeColumns comme dépendance car on veut mettre a jour la fonction si activeColumn change
@@ -159,10 +159,9 @@ export default function DataTable({ title, data, setData, children }) {
 
                 //Si le tabelau recu est trié mais pas filtré par la recherche
                 if (Array.isArray(ownData) && ownData.length === data.length) {
-                    console.log('hereNo')
                     data_ = data.filter(obj => {
                         const { id, ...parameters } = obj
-                        return (Object.values(parameters).find(props => props.indexOf(research.text) !== -1))
+                        return (Object.values(parameters).find(props => `${props}`.indexOf(research.text) !== -1))
                     })
                 }
 
@@ -260,7 +259,8 @@ export default function DataTable({ title, data, setData, children }) {
 
         const searchedData = data.filter(obj => {
             const { id, ...parameters } = obj
-            return (Object.values(parameters).find(props => props.indexOf(value) !== -1))
+            console.log(Object.values(parameters))
+            return (Object.values(parameters).find(props => `${props}`.indexOf(value) !== -1))
         })
 
         //Si la recherche ne donne rien
