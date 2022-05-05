@@ -12,7 +12,6 @@ export default function NavigationButtons({ pagesNumber, currentPage, changePage
         buttons.push(<button key="prev_key" onClick={() => changePage(currentPage - 1)}>Previous</button>)
 
     for (let i = 0; i <= pagesNumber; i++) {
-        console.log('slslsl')
         buttons.push(
             <button key={i} className={className(i)} onClick={() => changePage(i)}>
                 {i + 1}

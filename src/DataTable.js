@@ -196,7 +196,6 @@ export default function DataTable({ title, data, setData, children }) {
         }
         else if (pageNumber === pages) { //Dernière page
             if (data_.length % entries === 0) { //Si c'est un multiple d'entries
-                console.log('mutiple')
                 first = data_.length - entries
             } else {
                 first = data_.length - (data_.length % entries)
@@ -207,12 +206,9 @@ export default function DataTable({ title, data, setData, children }) {
             const multiplicator = pages - pageNumber + 1
 
             if (data_.length % entries === 0) {
-                console.log('middle multiple')
                 first = data_.length - (entries * multiplicator)
             } else {
-                console.log('middle no multiple')
                 first = (Math.ceil(data_.length / entries) * entries) - (entries * multiplicator)
-                console.log((Math.ceil(data_.length / entries) * entries))
             }
 
             second = first + (entries - 1)
@@ -235,7 +231,6 @@ export default function DataTable({ title, data, setData, children }) {
                 return setPage(d => ({ ...d, current: 0, pages: 0, entries: entries }))
             }
 
-            console.log('superieur')
             const pages = calculPages(entries, research.content.length)
 
             changePage(0, true, pages, entries, research.content)
@@ -259,7 +254,6 @@ export default function DataTable({ title, data, setData, children }) {
 
         const searchedData = data.filter(obj => {
             const { id, ...parameters } = obj
-            console.log(Object.values(parameters))
             return (Object.values(parameters).find(props => `${props}`.indexOf(value) !== -1))
         })
 
@@ -274,7 +268,6 @@ export default function DataTable({ title, data, setData, children }) {
 
         //Si on a aucune recherche ou que la recherche correspond à toute les données
         if ((value === '' || searchedData.length === data.length) && research.text !== '') {
-            console.log('ici')
             changePage(0, true, pages, null, 'data')
             setPage(s => ({ ...s, pages: pages }))
             return setResearch(r => ({ ...r, text: value, content: [] }))
