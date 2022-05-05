@@ -1,5 +1,5 @@
 import React from "react";
-import { ArrowIcon } from './icons/ArrowIcon';
+import ArrowIcon from './icons/ArrowIcon';
 import './styles/ArrowIcon.css';
 
 const DataColumns = React.memo(function ({ columns, handleSort, activeColumn }) {

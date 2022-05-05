@@ -3,7 +3,7 @@ import Table from "./Table";
 import './styles/DataTable.css'
 import NavigationButtons from './NavigationButtons';
 import { sortData } from './sortData';
-import { SearchIcon } from './icons/SearchIcon';
+import SearchIcon from './icons/SearchIcon';
 
 
 export default function DataTable({ title, data, setData, children }) {
