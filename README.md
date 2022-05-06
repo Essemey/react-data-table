@@ -28,3 +28,22 @@ export default function App(){
         </DataTable>
       </div>
 }
+```
+## Components
+
+### DataTable
+
+| Props         | Types  | Contents| Precisions                                                                |
+| ------------- |:------:| ------:| -------------------------------------------------------------------------:|
+| `title`       | string |        |  DataTable's title
+| `data`         | state         | Array  | Array can be empty or must contains object(s) wich get an id property with an unique value|
+| `setData`       | setState      |        |                                                                            |
+
+### Column
+
+| Props         | Types    | Contents | Precisions |
+| ------------- |:--------:| ------:| ------------:|
+| `title`       | string   |        |  Column's title
+| `data`        | string   |        |  Property's name of object(s) contains in state |
+| `type`        | string   |  number, text, date |  Type of data in column (default = 'text')
+
